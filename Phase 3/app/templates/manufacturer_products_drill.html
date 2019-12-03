@@ -1,0 +1,64 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Manufacturer Drill Down</h1>
+<div>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+</div>
+<div>
+    {% if state %}
+    <h2>{{ state }}</h2>
+    {% endif %}
+</div>
+<div>
+    {% if table %}
+    <table class ="table table-bordered table-hover" id='store_assignments'>
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Store Number</th>
+            <th scope="col">Street Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Year</th>
+            <th scope="col">Revenue</th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{#
+<script type="text/javaScript">
+    function man_drill_down(elem){
+        url = '/manufacturer_products'
+        $.post(url,elem);
+        console.log(elem);
+    }
+
+</script>
+
+{% extends "base.html" %}
+
+{% block page_content %}
+    <div class="container">
+        <h1>Manufacturer Drill Down</h1>
+        {{ manufacturer_name }}
+        {{ manufacturer|safe }}
+    </div>
+
+{% endblock %}
+#}

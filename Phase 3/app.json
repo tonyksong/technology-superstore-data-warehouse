@@ -1,0 +1,25 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "WEB_CONCURRENCY": {
+      "required": true
+    },
+    "FLASK_APP": "dbtest.py"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "dbtest",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

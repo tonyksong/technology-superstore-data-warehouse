@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Population Revenue</h1>
+    {% for table in tables %}
+        <h3>{{titles[loop.index]}}</h3>
+
+        <table class ="table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"> Year </th>
+                <th scope="col"> Small Category </th>
+                <th scope="col"> Medium Category </th>
+                <th scope="col"> Large Category </th>
+                <th scope="col"> Extra-Large Category </th>
+            </tr>
+            </thead>
+            {% for row in table %}
+                <tr>
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+</div>
+{% endblock %}

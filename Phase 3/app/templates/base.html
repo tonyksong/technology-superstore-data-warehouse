@@ -1,0 +1,63 @@
+﻿{% extends "bootstrap/base.html" %}
+
+
+
+
+
+{% block head %}
+{{ super() }}
+
+
+<title>
+{% block title %}
+{% if title %}
+    {{ title }} - Team 07
+{% else %}
+    Welcome to Team 07 Phase 3
+{% endif %}
+{% endblock %}
+</title>
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <!-- <div class="container"> -->
+        <!-- <div class="navbar"> -->
+<a class="navbar-brand h1" href="/index" >Team 07 / S&E's<br>Technology Superstore</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/holidays">Holidays</a></li>
+                <li><a href="/managers">Managers</a></li>
+                <li><a href="/assignments">Assignments</a></li>
+                <li><a href="/populations">Populations</a></li>
+                <li><a href="/manufacturer_products">Manufacturers' Products</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/gps">GPS</a></li>
+                <li><a href="/store_revenue">Store Revenue</a></li>
+                <li><a href="/gh_day">GH Day</a></li>
+                <li><a href="/state_volume">State Volume</a></li>
+                <li><a href="/population_revenue">Population Revenue</a></li>
+            </ul>
+        <!-- </div> -->
+    <!-- </div> -->
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+
+{% endblock %}

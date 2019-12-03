@@ -1,0 +1,33 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Populations</h1>
+
+<div class="container col-md-6">
+    <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">  City </th>
+            <th scope="col"> State </th>
+            <th scope="col"> Population </th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    <div class="col-md-6">
+    To change a city's recorded population, select the city, enter a positive integer for its population, then click the "Change" button.
+
+        {{ wtf.quick_form(form) }}
+    </div>
+
+{% endblock %}

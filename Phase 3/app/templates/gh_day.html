@@ -1,0 +1,28 @@
+﻿{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Groundhog Day</h1>
+
+    <table class ="table table-bordered table-hover"  border="1" cellpadding="5" cellspacing="5">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col"> Year </th>
+            <th scope="col"> Total AC Items Sold </th>
+            <th scope="col"> Average (Rounded) Number of Units Sold/Day </th>
+            <th scope="col"> Total Units Sold on GroundHog Day </th>
+
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

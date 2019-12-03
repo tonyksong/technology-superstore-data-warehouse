@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="container">
+
+
+    <h1>Store Details:</h1>
+    <p></p>
+    <h3>State: {{state}} </h3>
+    <h4>Category: {{category}} </h4><h4>Units: {{units}} </h4>
+    <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col"> Store Number </th>
+            <th scope="col"> Street Address </th>
+            <th scope="col"> City </th>
+            <th scope="col"> Manager </th>
+            <th scope="col"> Email </th>
+
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

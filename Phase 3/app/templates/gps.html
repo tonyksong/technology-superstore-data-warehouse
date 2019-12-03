@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>GPS</h1>
+    <table class ="table table-bordered table-hover" name = 'holidays' border="1" >
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Product ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Retail Price</th>
+            <th scope="col">Total<br>Units<br>Sold</th>
+            <th scope="col">Total Units<br>Sold at<br>Discount</th>
+            <th scope="col">Total Units<br>Sold at<br>Retail</th>
+            <th scope="col">Actual<br>Revenue</th>
+            <th scope="col">Predicted<br>Revenue</th>
+            <th scope="col">Difference</th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

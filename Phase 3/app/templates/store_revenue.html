@@ -1,0 +1,88 @@
+﻿{#{% extends "base.html" %}#}
+{#<style>#}
+{#    .div-inline{#}
+{##}
+{#        display:inline-block;#}
+{#    }#}
+{##}
+{#</style>#}
+{##}
+{##}
+{#{% block content %}#}
+{#<div class="container">#}
+{#    <h1>Store Revenue</h1>#}
+{#    <body>#}
+{##}
+{#    <form method="POST">#}
+{#        <div class="container">#}
+{#            <div class = "row">#}
+{#                 <div class="col-sm">#}
+{#                    <select class = "form-control"  name = "selected_state" >#}
+{#                         {% for states in states %}#}
+{#                            <option value= "{{states[0]}}">{{states[0]}}</option>"#}
+{#                         {% endfor %}#}
+{##}
+{#                     </select>#}
+{#                 </div>#}
+{#                 <div class="col-sm">#}
+{#                    <button class = "btn btn-default" type="submit" value="Generate">Generate</button>#}
+{#                 </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </form>#}
+{##}
+{#    <h3>{{ state_nam }}</h3>#}
+{##}
+{##}
+{##}
+{#    </body>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#    <!-- {{ table|safe }} -->#}
+{#</div>#}
+{#{% endblock %}#}
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Store Revenue</h1>
+<div>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+</div>
+<div>
+    {% if state %}
+    <h2>{{ state }}</h2>
+    {% endif %}
+</div>
+<div>
+    {% if table %}
+    <table class ="table table-bordered table-hover" id='store_assignments'>
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Store Number</th>
+            <th scope="col">Street Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Year</th>
+            <th scope="col">Revenue</th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}

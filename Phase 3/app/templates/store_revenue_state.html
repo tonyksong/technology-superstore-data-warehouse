@@ -1,0 +1,77 @@
+﻿{% extends "base.html" %}
+<style>
+    .div-inline{
+
+        display:inline-block;
+    }
+
+</style>
+
+
+{% block page_content %}
+<div class="container">
+    <h1>Store Revenue</h1>
+    <body>
+
+    <form method="POST">
+        <div class="container">
+            <div class = "row">
+                 <div class="col-sm">
+                    <select class = "form-control"  name = "selected_state" >
+                         {% for states in states %}
+                            <option value= "{{states[0]}}" SELECTED>{{states[0]}}</option>"
+                         {% endfor %}
+
+                     </select>
+                 </div>
+                 <div class="col-sm">
+                    <button class = "btn btn-default" type="submit" value="Generate">Generate</button>
+                 </div>
+            </div>
+        </div>
+    </form>
+
+    <h3>{{ state_nam }}</h3>
+
+    <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col"> Store Number </th>
+            <th scope="col"> Street Address </th>
+            <th scope="col"> City </th>
+            <th scope="col"> Year </th>
+            <th scope="col"> Revenue </th>
+
+        </tr>
+        </thead>
+        {% for row in stores %}
+            <tr>
+
+                {% for d in row %}
+                        <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+    <!-- {{ table|safe }} -->
+</div>
+{% endblock %}

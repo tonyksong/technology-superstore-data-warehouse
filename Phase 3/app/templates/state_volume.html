@@ -1,0 +1,90 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+        <h1>State Volume</h1>
+        <h3>S&E's Technology Superstore State with Highest Volume for Each Category</h3>
+<div class="container">
+    <p>Select a month-year below, then click the Generate button.</p>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+</div>
+
+{% if state_vol %}
+<div class="container">
+<h3>Report for {{ monthYear }}</h3>
+<h4>Highest Volume States in Each Category, Including Number of Units Sold</h4>
+<p>Click a state to see details of stores in that state.</p>
+     <table class = "table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+         <thead class="thead-light">
+          <tr>
+            <th>Category</th>
+            <th>State</th>
+            <th>Units</th>
+          </tr>
+         </thead>
+    {% for row in state_vol %}
+        <tr>
+        {% for d in row %}
+            {%if loop.index == 2%}
+                <td><a href="/state_volume/{{ d }}/{{row[0]}}/{{row[2]}}/{{ monthYear }}/">{{ d }}</a></td>
+            {% else %}
+                <td>{{ d }}</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+<div class="container">
+{% if table %}
+    <h2>Store Details:</h2>
+    <p></p>
+    <h3>Month-Year: {{monthYear}}</h3>
+    <h3>Category: {{category}}</h3>
+    <h3>Highest Volume State: {{state}}</h3>
+    <h4>Units Sold in Category: {{units}}</h4>
+
+    <table class ="table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Store Number</th>
+            <th scope="col">Street Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+{#
+    <form method="POST">
+
+    <select class = "form-control" name = "selected_month_year" >
+        {% for m_y in month_years %}
+            <option value= "{{m_y[0]}}">{{m_y[0]}}</option>"
+        {% endfor %}
+
+   </select>
+        <p></p>
+        <button class = "btn btn-default" type="submit" value="Generate">Generate</button>
+    </form>
+
+        <p></p>
+#}
+
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+﻿
+<script type="text/javaScript">
+    function man_drill_down(elem){
+        url = '/manufacturer_products'
+        $.post(url,elem);
+        console.log(elem);
+    }
+
+</script>
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Manufacturers' Products</h1>
+    <body>
+
+        <table name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+        {% for row in table %}
+            <tr>
+            {% for d in row %}
+                    {%if loop.index == 1%}
+                        <td name ="man_nam"><a onclick="man_drill_down('{{d}}');"value = "{{d}}">{{d}}</a></td>
+                    {% else %}
+                        <td>{{ d }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+
+    </body>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Managers</h1>
+
+<ul>
+    <li>To add a new manager or change an existing manager's name, enter the manager's name and email address, then click the "Add/Change" button.</li>
+    <li>If the email address you enter is already in use, the manager's name will be updated.</li>
+    <li>If the email address you enter is new, the new manager will be added.</li>
+    <li>After selecting from the dropdown list, you may deactivate or delete (if already deactivated) a manager.</li>
+</ul>
+
+    <hr />
+<div class="container col-md-6">
+    <table class ="table table-bordered table-hover" name = 'holidays' border="1" >
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Manager</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        {% for row in table %}
+            <tr>
+
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    <div class="col-md-6">
+{{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}

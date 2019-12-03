@@ -1,0 +1,76 @@
+﻿{% extends "base.html" %}
+
+{% block page_content %}
+
+    <div class="container">
+        <body>
+        <h1>Manufacturer Drill Down: {{ manufacturer_name|safe }} </h1>
+        <p></p>
+        <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"> Maximum Discount </th>
+            </tr>
+            </thead>
+            {% for row in manufacturer_discount %}
+                <tr>
+
+                    {% for d in row %}
+                        <td>{{ d }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <p></p>
+        <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">  PID </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Categories </th>
+                <th scope="col"> Price </th>
+            </tr>
+            </thead>
+            {% for row in manufacturer_details %}
+                <tr>
+
+                    {% for d in row %}
+                        <td>{{ d }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <table class ="table table-hover">
+        </table>
+        <h1>Manufacturers' Products</h1>
+        <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">  Name </th>
+                <th scope="col"> Products Offered </th>
+                <th scope="col"> Retail Price </th>
+                <th scope="col"> Min Price </th>
+                <th scope="col"> Max Price </th>
+
+
+            </tr>
+            </thead>
+        {% for row in summary_table %}
+            <tr>
+
+            {% for d in row %}
+                    {%if loop.index == 1%}
+                        <td><a href="/manufacturer_products_drill?manufacturer_name={{ d }}">{{ d }}</a></td>
+                    {% else %}
+                        <td>{{ d }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+
+        <!-- {{ summary_table|safe }} -->
+        </body>
+    </div>
+{% endblock %}

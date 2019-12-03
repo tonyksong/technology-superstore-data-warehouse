@@ -1,0 +1,118 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+
+    <div class="container">
+        <h1>Manufacturers' Products</h1>
+
+    {% if drillTitle %}
+    <div class="container">
+        <h3>{{ drillTitle }}: {{ manufacturer }}</h3>
+        <table class ="table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Max Discount</th>
+                <th scope="col">Products Offered</th>
+                <th scope="col">Avg Price</th>
+                <th scope="col">Min Price</th>
+                <th scope="col">Max Price</th>
+            </tr>
+            </thead>
+        {% for row in header %}
+            <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+        <table class ="table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">PID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Categories</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            {% for row in manufacturer_details %}
+                <tr>
+                    {% for d in row %}
+                        <td>{{ d }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <div>
+        <table class ="table table-bordered table-hover" border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Products Offered</th>
+                <th scope="col">Retail Price</th>
+                <th scope="col">Min Price</th>
+                <th scope="col">Max Price</th>
+            </tr>
+            </thead>
+        {% for row in summary_table %}
+            <tr>
+            {% for d in row %}
+                    {%if loop.index == 1%}
+                        <td><a href="{{ url_for('manufacturer_products') }}{{ d }}">{{ d }}</a></td>
+                    {% else %}
+                        <td>{{ d }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+{% endblock %}
+
+
+{#
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block page_content %}
+
+    <div class="container">
+        <h1>Manufacturers' Products</h1>
+
+
+        <table class ="table table-bordered table-hover" name = 'manu_overview' border="1" cellpadding="5" cellspacing="5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"> Name </th>
+                <th scope="col"> Products Offered </th>
+                <th scope="col"> Retail Price </th>
+                <th scope="col"> Min Price </th>
+                <th scope="col"> Max Price </th>
+
+
+            </tr>
+            </thead>
+        {% for row in summary_table %}
+            <tr>
+
+            {% for d in row %}
+                    {%if loop.index == 1%}
+                        <td><a href="/manufacturer_products_drill?manufacturer_name={{ d }}">{{ d }}</a></td>
+                    {% else %}
+                        <td>{{ d }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+
+    </div>
+{% endblock %}
+#}

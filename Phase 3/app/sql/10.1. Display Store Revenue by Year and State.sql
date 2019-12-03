@@ -1,0 +1,1 @@
+SELECT DISTINCT state FROM City ORDER BY state;

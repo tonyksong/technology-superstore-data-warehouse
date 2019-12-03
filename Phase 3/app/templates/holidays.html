@@ -1,0 +1,39 @@
+﻿{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block page_content %}
+
+
+    <div class="container">
+        <h1>Holidays</h1>
+        <ul>
+            <li>To add a new holiday or change an existing holiday's name, enter the holiday's name and date, then click the Enter button.</li>
+            <ul>
+                <li>If the holiday date you enter is already in use, the holiday's name will be updated.</li>
+                <li>If the date you enter is new, the new holiday will be added.</li>
+            </ul>
+            <li>To add multiple holidays on a single date, concatenate the holiday names and specify the date.</li>
+        </ul>
+        <div class="col-md-3">
+            {{ wtf.quick_form(form) }}
+        </div>
+        <div class="col-md-12">
+            <table class ="table table-bordered table-hover" name = 'holidays' border="1" >
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Holiday</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                {% for row in table %}
+                    <tr>
+
+                        {% for d in row %}
+                            <td>{{ d }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

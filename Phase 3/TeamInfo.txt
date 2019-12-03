@@ -1,0 +1,45 @@
+OMSA CS6400 Team07:
+Omer Salman Ansari      email: oansari@gatech.edu
+Kevin Blaine Elmer      email: kevin.elmer@gatech.edu
+Richard Allen Levine    email: ralevine@gatech.edu
+Anthony Kyobin Song     email: asong45@gatech.edu
+
+See "Compilation of all SQL used in project.PDF" (in root Phase 3 folder) for complete listing of all SQL used in the project.
+
+Paths to files containing SQL commands used in project:
+
+01. Display Main Menu: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/01.%20Display%20Main%20Menu.sql
+
+02. Edit Holiday Data: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/02%20Edit%20Holiday%20Data.sql
+
+03. Edit Manager Profile: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/03.%20Edit%20Manager%20Profile.sql
+
+04. Assign Stores: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/04.%20Assign%20Stores.sql
+
+05. Update City Population: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/05.%20Update%20City%20Population.sql
+
+06. Display Manufacturer Summary: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/06.%20Display%20Manufacturer%20Summary.sql
+
+07. Display Manufacturer Drill-Down Summary:
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/07a.%20Display%20Manufacturer%20Drill-Down%20Details.sql
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/07b.%20Display%20Manufacturer%20Drill-Down%20Details.sql
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/07c.%20Display%20Manufacturer%20Drill-Down%20Details.sql
+
+08. Category Summary: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/08.%20Category%20Summary.sql
+
+09. Display Actual vs Predicted GPS: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/09.2.%20Display%20Actual%20vs%20Predicted%20GPS.sql
+
+10. Display Store Revenue by Year:
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/10.%20Display%20Store%20Revenue%20by%20Year%20and%20State.sql
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/10.1.%20Display%20Store%20Revenue%20by%20Year%20and%20State.sql
+
+11. Display Air Conditioners on Groundhog Day: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/11.%20Display%20Air%20Conditioners%20on%20Groundhog%20Day.sql
+
+12. Display State Volume by Category:
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/12.1%20Display%20State%20Volume%20by%20Category.sql
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/12.2%20Display%20State%20Volume%20by%20Category.sql
+https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/12.3%20Display%20State%20Volume%20by%20Category.sql
+
+13. Display Annual Average Revenue by City Population: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/13.2.%20Display%20Annual%20Average%20Revenue%20by%20City%20Population.sql
+
+14. Display Groundhog Day: https://github.gatech.edu/gt-omsa-dbscd-spring19/6400Spring19Team07/blob/master/Phase%203/app/sql/14.%20Display%20Groundhog%20Day.sql
