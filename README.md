@@ -1,5 +1,5 @@
 # 6400Spring19Team07
-Repository for Team 07 Project submissions for CSE 6400, Spring19.
+Repository for Team 07 Project submissions for CS 6400, Spring19.
 
 ## Project Description: 
 The purpose of this project is to analyze, specify, design, and implement a data warehouse for an up-and-coming computer and electronics store called S&E’s Technology Superstore. The project will proceed in three phases as outlined in the Classical Methodology for Database Development: Analysis & Specification, Design, and Implementation & Testing. The system will be implemented using a Database Management System (DBMS) that supports standard SQL queries.
